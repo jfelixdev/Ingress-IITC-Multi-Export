@@ -151,6 +151,7 @@ function wrapper(plugin_info) {
             }else{
                 var p = window.portals[i];
                 var name = p.options.data.title;
+                var image = p.options.data.image;
                 var guid = p.options.guid;
                 var latlng = p._latlng.lat + ',' +  p._latlng.lng;
                 if(source === 'VIEWFIL'){
@@ -182,7 +183,7 @@ function wrapper(plugin_info) {
                     o.push(name + ";https://www.ingress.com/intel?ll=" + latlng + "&z=18&pll=" + latlng + ";" + keys);
                     break;
                 case 'CSV':
-                    o.push("\"" + name + "\"," + lat + "," + lng);
+                    o.push("\"" + name + "\"," + lat + "," + lng + "," + "\"" + image + "\");
                     break;
                 case 'GPX':
                     var iitcLink = "https://www.ingress.com/intel?ll=" + lat + "," + lng + "&amp;z=17&amp;pll=" + lat + "," + lng;
@@ -202,6 +203,7 @@ function wrapper(plugin_info) {
                     o.push("\"title\": " + JSON.stringify(name) + ",");
                     o.push("\"guid\": \"" + guid + "\",");
                     o.push("\"latlng\": \"" + latlng + "\"");
+                    o.push("\"image\": " + JSON.stringify(image) + ",");
                     o.push("},");
                     break;
                 case 'BKMRK':
