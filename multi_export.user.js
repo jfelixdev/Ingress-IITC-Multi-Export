@@ -183,7 +183,7 @@ function wrapper(plugin_info) {
                     o.push(name + ";https://www.ingress.com/intel?ll=" + latlng + "&z=18&pll=" + latlng + ";" + keys);
                     break;
                 case 'CSV':
-                    o.push("\"" + name + "\"," + lat + "," + lng + "," + "\"" + image + "\");
+                    o.push("\"" + name + "\"," + lat + "," + lng + ",\"" + image + "\"");
                     break;
                 case 'GPX':
                     var iitcLink = "https://www.ingress.com/intel?ll=" + lat + "," + lng + "&amp;z=17&amp;pll=" + lat + "," + lng;
